@@ -1,0 +1,11 @@
+---
+- name: Deploy
+  hosts: all
+  remote_user: "agoujil"
+  tasks:
+  - include_vars: "{{item}}.yml"
+    loop:
+      - "vars"
+      - "vars_api"
+  - include_role:
+      name: ansistrano.deploy

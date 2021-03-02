@@ -1,0 +1,14 @@
+- name: Composer install
+  composer:
+    command: install
+    working_dir: "{{ ansistrano_release_path.stdout }}"
+    optimize_autoloader: true
+  
+
+- name:  Storage directory
+  file:
+    path: "{{ item }}"
+    mode: 0777
+    state: directory
+  with_items:
+    - "{{ ansistrano_shared_path }}/var/"

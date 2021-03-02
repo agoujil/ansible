@@ -1,0 +1,9 @@
+ansistrano_deploy_to: "{{web_root}}/api"
+ansistrano_deploy_via: git
+ansistrano_git_repo: "git@bitbucket.org:ezidev/ezistock-bo.git"
+ansistrano_git_ssh_opts: "-o StrictHostKeyChecking=no"
+ansistrano_keep_releases: 5
+ansistrano_shared_paths: ["var"]
+ansistrano_before_symlink_shared_tasks_file: "{{ playbook_dir }}/tasks/api/before_symlink.yml"
+ansistrano_after_symlink_shared_tasks_file: "{{ playbook_dir }}/tasks/api/after_symlink.yml"
+ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/tasks/api/end.yml"

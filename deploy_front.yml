@@ -1,0 +1,13 @@
+---
+- name: Deploy
+  hosts: all
+  remote_user: "agoujil"
+  tasks:
+  - include_vars: "{{item}}.yml"
+    loop:
+      - "vars"
+      - "vars_front"
+  - include_role:
+      name: ansistrano.deploy
+    vars:
+        ansistrano: "{{ front }}"

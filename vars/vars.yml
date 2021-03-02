@@ -1,0 +1,8 @@
+php_version: 7.3
+user: agoujil
+domain: agoujil.com
+mysql_db: dev_database
+mysql_user: webmanager
+mysql_password: "1234567"
+mysql_root_password: "1234567"
+web_root: /home/{{ user }}/{{ domain }}
